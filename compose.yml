@@ -1,0 +1,10 @@
+services:
+  app:
+    build: .
+    volumes:
+      - .:/app
+    ports:
+      - 8501:8501
+    # env_file:
+    # - .env
+    command: "poetry run python -m streamlit run src/python_chat_ui/streamlit.py"
