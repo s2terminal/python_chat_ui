@@ -26,3 +26,12 @@ services:
     env_file:
     - .env
     command: "poetry run python src/python_chat_ui/nicegui_main.py"
+  dash:
+    build: .
+    volumes:
+      - .:/app
+    ports:
+      - 8050:8050
+    env_file:
+    - .env
+    command: "poetry run python src/python_chat_ui/dash_main.py"
