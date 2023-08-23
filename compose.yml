@@ -1,5 +1,5 @@
 services:
-  app:
+  streamlit:
     build: .
     volumes:
       - .:/app
@@ -8,3 +8,12 @@ services:
     env_file:
     - .env
     command: "poetry run python -m streamlit run src/python_chat_ui/streamlit_main.py"
+  gradio:
+    build: .
+    volumes:
+      - .:/app
+    ports:
+      - 7860:7860
+    env_file:
+    - .env
+    command: "poetry run gradio src/python_chat_ui/gradio_main.py"
