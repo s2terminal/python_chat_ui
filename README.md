@@ -9,3 +9,6 @@ http://localhost:8501/
 
 [Gradio](https://www.gradio.app/)
 http://localhost:7860/
+
+[NiceGUI](https://nicegui.io/)
+http://localhost:8080/

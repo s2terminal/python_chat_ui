@@ -17,3 +17,12 @@ services:
     env_file:
     - .env
     command: "poetry run gradio src/python_chat_ui/gradio_main.py"
+  nicegui:
+    build: .
+    volumes:
+      - .:/app
+    ports:
+      - 8080:8080
+    env_file:
+    - .env
+    command: "poetry run python src/python_chat_ui/nicegui_main.py"
